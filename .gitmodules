@@ -1,0 +1,3 @@
+[submodule "vendor/uuidtools"]
+	path = vendor/uuidtools
+	url = git://github.com/sporkmonger/uuidtools.git
