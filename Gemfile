@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
-gem 'uuidtools'
+gem 'motion-require'
+gem 'rm-digest'
 
 gemspec

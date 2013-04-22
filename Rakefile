@@ -2,7 +2,10 @@ $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project'
 require 'bundler/gem_tasks'
 require 'bundler/setup'
-require 'uuidtools'
+require 'motion-require'
+require 'rm-digest'
+
+Motion::Require.all
 
 $:.unshift("./lib/")
 require './lib/motion_uuid'
