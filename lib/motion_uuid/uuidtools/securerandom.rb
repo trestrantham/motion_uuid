@@ -34,11 +34,6 @@
 # ...
 
 if !defined?(SecureRandom)
-  begin
-    require 'openssl'
-  rescue LoadError
-  end
-
   module SecureRandom
     # SecureRandom.random_bytes generates a random binary string.
     #
@@ -51,10 +46,6 @@ if !defined?(SecureRandom)
     # NotImplementedError is raised.
     def self.random_bytes(n=nil)
       n ||= 16
-
-      if defined? OpenSSL::Random
-        return OpenSSL::Random.random_bytes(n)
-      end
 
       if !defined?(@has_urandom) || @has_urandom
         flags = File::RDONLY
